@@ -3,7 +3,6 @@ pipeline
 agent any
 stages 
 {
-
 stage("cleaning stage")
 {
  steps
@@ -24,17 +23,6 @@ stage("Packaging stage")
  {
  bat "mvn package"
  }
-}
-stage('Results')
-{
-steps
-    {
-        junit = '**/target/surefire-reports/TEST-*.xml'
-        archiveArtifacts 'target/*.jar'
-    }
-	
- }   
-
 }
 
 }
